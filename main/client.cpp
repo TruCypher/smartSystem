@@ -37,6 +37,7 @@ int main(int argc, char** argv) {
     } else if (user == 0) {
         std::string sql;
         while(true) {
+            std::cout << digitalRead(led) << " : " << prevMode << std::endl;
             if(digitalRead(led) != prevMode) {
                 if(digitalRead(led) == LOW) {
                     sql = "INSERT INTO devices (deviceName, deviceData) VALUES ('led', 'the led is turned off')";
@@ -53,9 +54,8 @@ int main(int argc, char** argv) {
                     std::cout <<  buffer << std::endl;
                     prevMode = digitalRead(led);
                 }
-                delay(1500);
             }
-
+            delay(1300);
         }
 
     } else {

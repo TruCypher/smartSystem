@@ -1,8 +1,8 @@
-all: Serv Cli
+all: Serv Cli Light
 
-#Light: lightTest.cpp
-	#@echo "..compiling lightTest"
-	#@g++ lightTest.cpp -std=c++11 -lwiringPi -lwiringPiDev
+Light: lightTest.cpp
+	@echo "..compiling lightTest"
+	@g++ lightTest.cpp -std=c++11 -lwiringPi -lwiringPiDev
 
 Serv: server.cpp
 	@echo "... compiling server"
@@ -15,3 +15,4 @@ Cli: client.cpp
 clean: 
 	rm Serv Cli
 	rm *.o ouput
+	rm a.out
